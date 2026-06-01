@@ -42,13 +42,18 @@ These recur and are easy to miss. Check each explicitly.
 ### Markdown rendering bugs
 - **Backtick-wrapped links**: a `[text](url)` wrapped entirely in backticks
   renders as literal text, not a link. Put any code span *inside* the link instead.
-- **Nested/double links**: a link whose text is itself a link is malformed —
+- **Nested/double links**: a link whose text is itself a link is malformed -
   collapse to one.
 - **Bullets missing the space** after the hyphen won't render as list items.
 - **Misplaced backticks** that split a word or token.
 - **Plain-text trailing links**: the Review and Resources sections (Governance
   forum, Operational Manual, Sky Governance Calendar) must be hyperlinked per the
   template — these are frequently left as plain text.
+- **Run markdownlint** over the doc to catch standard Markdown deviations
+  (inconsistent list markers, heading levels, spacing, etc.) per the
+  `drafting-style-guideline.md` recommendation. If a linter binary is available
+  (e.g. `markdownlint`/`markdownlint-cli2`), run it and report findings; otherwise
+  check the equivalent rules manually.
 
 ### Addresses
 - All Ethereum addresses **checksummed** (EIP-55 casing); flag all-lowercase.
@@ -68,7 +73,7 @@ These recur and are easy to miss. Check each explicitly.
   watch for a single outlier left behind after a find/replace.
 - **Title ↔ Summary ↔ Executive Summary ↔ Proposal Details** must list the same
   items in the same order, ordered by judged impact.
-- **Frontmatter summary wording vs. body**: match the precise body wording,
+- **Frontmatter summary wording vs. body**: match the precise body wording, 
   especially for numeric/parameter changes.
 - **Internal arithmetic**: verify stated deltas and totals add up and are
   consistent with prior docs.
